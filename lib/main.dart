@@ -34,6 +34,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Color cardColor = rkPasifCardBackColor;
   cinsiyet seciliCinsiyet;
   int height = 180;
+  int kilo = 70;
+  int yas = 25;
 
   @override
   Widget build(BuildContext context) {
@@ -52,36 +54,42 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Column(
         children: [
-          SizedBox(
-            height: 20,
-          ),
           Expanded(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                GuzelCard(
-                  fonksiyon: () {
-                    setState(() {
-                      seciliCinsiyet = cinsiyet.male;
-                    });
-                  },
-                  cardColor: seciliCinsiyet == cinsiyet.male
-                      ? rkAktifCardBackColor
-                      : rkPasifCardBackColor,
-                  simge: Icons.male,
-                  metin: "ERKEK",
+                Row(
+                  children: [
+                    GuzelCard(
+                        fonksiyon: () {
+                          setState(() {
+                            seciliCinsiyet = cinsiyet.male;
+                          });
+                        },
+                        cardColor: seciliCinsiyet == cinsiyet.male
+                            ? rkAktifCardBackColor
+                            : rkPasifCardBackColor,
+                        simge: Icons.male,
+                        metin: "ERKEK",
+                      ),
+                  ],
                 ),
-                GuzelCard(
-                  fonksiyon: () {
-                    setState(() {
-                      seciliCinsiyet = cinsiyet.female;
-                    });
-                  },
-                  cardColor: seciliCinsiyet == cinsiyet.female
-                      ? rkAktifCardBackColor
-                      : rkPasifCardBackColor,
-                  simge: Icons.female,
-                  metin: "KADIN",
+                Row(
+                  children: [
+                    GuzelCard(
+
+                      fonksiyon: () {
+                        setState(() {
+                          seciliCinsiyet = cinsiyet.female;
+                        });
+                      },
+                      cardColor: seciliCinsiyet == cinsiyet.female
+                          ? rkAktifCardBackColor
+                          : rkPasifCardBackColor,
+                      simge: Icons.female,
+                      metin: "KADIN",
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -128,6 +136,115 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
           ),
+          Expanded(
+            child: Row(
+              children: [
+                Expanded(
+                  child: OrtakCard(
+                    () {},
+                    Colors.red,
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "KİLO",
+                          style: tsActivCardColor,
+                        ),
+                        Row(
+                          textBaseline: TextBaseline.alphabetic,
+                          crossAxisAlignment: CrossAxisAlignment.baseline,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              kilo.toString(),
+                              style: tsHeightStyle,
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            FloatingActionButton(
+                              backgroundColor:  Color.fromRGBO(255,255,255,1),
+                              foregroundColor: Colors.black,
+                              onPressed: () {
+                                setState(() {
+                                  kilo = kilo +1;
+                                });
+                              },
+                              child: Icon(Icons.add),
+                            ),
+                            FloatingActionButton(
+                              backgroundColor:  Color.fromRGBO(255,255,255,1),
+                              foregroundColor: Colors.black,
+                              onPressed: () {
+                                setState(() {
+                                  kilo = kilo -1;
+                                });
+                              },
+                              child: Icon(Icons.remove_outlined),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: OrtakCard(
+                    () {},
+                    Colors.red,
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "YAS",
+                          style: tsActivCardColor,
+                        ),
+                        Row(
+                          textBaseline: TextBaseline.alphabetic,
+                          crossAxisAlignment: CrossAxisAlignment.baseline,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              yas.toString(),
+                              style: tsHeightStyle,
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            FloatingActionButton(
+                              backgroundColor:  Color.fromRGBO(255,255,255,1),
+                              foregroundColor: Colors.black,
+                              onPressed: () {
+                                setState(() {
+                                  yas = yas +1;
+                                });
+                              },
+                              child: Icon(Icons.add),
+                            ),
+                            FloatingActionButton(
+                              backgroundColor:  Color.fromRGBO(255,255,255,1),
+                              foregroundColor: Colors.black,
+                              onPressed: () {
+                                setState(() {
+                                  yas = yas -1;
+                                });
+                              },
+                              child: Icon(Icons.remove_outlined),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+
         ],
       ),
     );

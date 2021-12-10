@@ -14,6 +14,9 @@ class GuzelCard extends StatelessWidget {
     return GestureDetector(
       onTap: fonksiyon,
       child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15.0),
+        ),
         elevation: 15.0,
         color: cardColor,
         child: Column(
@@ -59,3 +62,11 @@ class OrtakCard extends StatelessWidget {
     );
   }
 }
+class kilocard extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+

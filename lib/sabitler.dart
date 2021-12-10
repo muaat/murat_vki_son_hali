@@ -23,9 +23,9 @@ TextStyle tsCmStyle = TextStyle(
 
 SliderThemeData stSliderTheme = SliderThemeData(
   inactiveTrackColor: Color(0xFF8D8E98),
-  activeTrackColor: Colors.yellow,
-  thumbColor: Color(0xFFEB1555),
-  overlayColor: Color(0x29EB1555),
+  activeTrackColor: Colors.grey.shade800,
+  thumbColor: Color(0xFF3D3B3B),
+  overlayColor: Color(0x299C8F95),
   thumbShape: RoundSliderThumbShape(enabledThumbRadius: 15.0),
   overlayShape: RoundSliderOverlayShape(overlayRadius: 45.0),
 );
