@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vki_hesaplama/card_widget.dart';
 import 'package:vki_hesaplama/sabitler.dart';
+import 'package:vki_hesaplama/sonuc.dart';
 
 void main() {
   runApp(const MyApp());
@@ -61,23 +62,22 @@ class _MyHomePageState extends State<MyHomePage> {
                 Row(
                   children: [
                     GuzelCard(
-                        fonksiyon: () {
-                          setState(() {
-                            seciliCinsiyet = cinsiyet.male;
-                          });
-                        },
-                        cardColor: seciliCinsiyet == cinsiyet.male
-                            ? rkAktifCardBackColor
-                            : rkPasifCardBackColor,
-                        simge: Icons.male,
-                        metin: "ERKEK",
-                      ),
+                      fonksiyon: () {
+                        setState(() {
+                          seciliCinsiyet = cinsiyet.male;
+                        });
+                      },
+                      cardColor: seciliCinsiyet == cinsiyet.male
+                          ? rkAktifCardBackColor
+                          : rkPasifCardBackColor,
+                      simge: Icons.male,
+                      metin: "ERKEK",
+                    ),
                   ],
                 ),
                 Row(
                   children: [
                     GuzelCard(
-
                       fonksiyon: () {
                         setState(() {
                           seciliCinsiyet = cinsiyet.female;
@@ -165,21 +165,21 @@ class _MyHomePageState extends State<MyHomePage> {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             FloatingActionButton(
-                              backgroundColor:  Color.fromRGBO(255,255,255,1),
+                              backgroundColor: Color.fromRGBO(255, 255, 255, 1),
                               foregroundColor: Colors.black,
                               onPressed: () {
                                 setState(() {
-                                  kilo = kilo +1;
+                                  kilo = kilo + 1;
                                 });
                               },
                               child: Icon(Icons.add),
                             ),
                             FloatingActionButton(
-                              backgroundColor:  Color.fromRGBO(255,255,255,1),
+                              backgroundColor: Color.fromRGBO(255, 255, 255, 1),
                               foregroundColor: Colors.black,
                               onPressed: () {
                                 setState(() {
-                                  kilo = kilo -1;
+                                  kilo = kilo - 1;
                                 });
                               },
                               child: Icon(Icons.remove_outlined),
@@ -216,21 +216,21 @@ class _MyHomePageState extends State<MyHomePage> {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             FloatingActionButton(
-                              backgroundColor:  Color.fromRGBO(255,255,255,1),
+                              backgroundColor: Color.fromRGBO(255, 255, 255, 1),
                               foregroundColor: Colors.black,
                               onPressed: () {
                                 setState(() {
-                                  yas = yas +1;
+                                  yas = yas + 1;
                                 });
                               },
                               child: Icon(Icons.add),
                             ),
                             FloatingActionButton(
-                              backgroundColor:  Color.fromRGBO(255,255,255,1),
+                              backgroundColor: Color.fromRGBO(255, 255, 255, 1),
                               foregroundColor: Colors.black,
                               onPressed: () {
                                 setState(() {
-                                  yas = yas -1;
+                                  yas = yas - 1;
                                 });
                               },
                               child: Icon(Icons.remove_outlined),
@@ -244,7 +244,10 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
           ),
-
+          bottombtn(
+            color: Colors.grey,
+            text: "Sonuç Al",
+          ),
         ],
       ),
     );
