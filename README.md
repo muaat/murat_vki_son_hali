@@ -1,6 +1,7 @@
 # vki_hesaplama
 
-Vücut Kitle Endeksi Hesapalama
+
+i Hesapalama
 
 ## Getting Started
 
